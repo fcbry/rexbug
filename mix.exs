@@ -35,7 +35,8 @@ defmodule Rexbug.Mixfile do
         test: :test,
         "test.watch": :test
       ],
-      docs: docs()
+      docs: docs(),
+      compilers: [:yecc,:leex] ++ Mix.compilers()
     ]
   end
 
@@ -85,7 +86,6 @@ defmodule Rexbug.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:redbug, "~> 2.0"},
 
       # test/housekeeping stuff
       {:credo, "~> 1.0", only: [:dev], optional: true, runtime: false},
